@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#222222">
+<title>AI Art Panic (2026)</title>
+<style>
+:root{--bg:#222222;--bg2:#2b2b2b;--bg3:#333;--fg:#e4e4e4;--mute:#9a9a9a;--line:#444;--acc:#c7a6ff;--acc2:#ff9ecb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;background:var(--bg2);border-right:1px solid var(--line);padding:1.4rem 1.1rem}
+.brand{font-weight:700;font-size:1.15rem;color:var(--fg);text-decoration:none;display:block;margin-bottom:.3rem}
+.sub{color:var(--mute);font-size:.85rem;margin:0 0 1.2rem}
+aside h4{margin:1.2rem 0 .5rem;font-size:.85rem;color:var(--mute);font-weight:600}
+aside ul{list-style:none;margin:0;padding:0}
+aside li a{display:block;padding:.28rem .5rem;border-radius:4px;color:var(--fg);text-decoration:none;font-size:.92rem;line-height:1.35}
+aside li.l3 a{padding-left:1.4rem;color:var(--mute);font-size:.86rem}
+aside li a:hover,aside li a.on{background:var(--bg3);color:var(--acc)}
+main{padding:2.5rem 2rem 4rem}
+article{max-width:760px;margin:0 auto}
+h1{font-size:2.4rem;line-height:1.2;margin:.2rem 0 .4rem}
+h2{font-size:1.7rem;margin:3rem 0 1rem;padding-bottom:.3rem;border-bottom:1px solid var(--line);line-height:1.3}
+h3{font-size:1.25rem;margin:2rem 0 .7rem;color:var(--acc2);line-height:1.35}
+.anchor{margin-left:.5rem;color:var(--mute);text-decoration:none;opacity:0;font-weight:400}
+h2:hover .anchor,h3:hover .anchor,.anchor:focus{opacity:1}
+p{margin:0 0 1.1rem}
+a{color:var(--acc)} a:hover{color:var(--acc2)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+strong u{text-decoration:none}
+.tags{color:var(--mute);margin-bottom:1.6rem}
+blockquote{margin:0 0 1.2rem;padding:.2rem 0 .2rem 1.1rem;border-left:3px solid var(--line)}
+ul,ol{padding-left:1.4rem;margin:0 0 1.2rem} li{margin:.3rem 0}
+figure{margin:1.4rem 0;text-align:center}
+figure img{max-width:100%;height:auto;border-radius:4px;border:1px solid var(--line)}
+figcaption{margin-top:.5rem;color:var(--mute);font-size:.88rem;line-height:1.5;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+figcaption p{margin:0}
+.tw{overflow-x:auto;margin:0 0 1.4rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.5}
+th,td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top}
+th{background:var(--bg3)} tbody tr:nth-child(even){background:#272727}
+td:first-child,th:first-child{white-space:nowrap}
+footer{max-width:760px;margin:3rem auto 0;padding-top:1rem;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+.menu{display:none}
+@media(max-width:900px){
+ .shell{grid-template-columns:1fr}
+ aside{display:none;position:fixed;inset:0 auto 0 0;width:84%;max-width:320px;height:100%;z-index:20;padding-top:calc(1.4rem + env(safe-area-inset-top,0px))}
+ aside.open{display:block}
+ .menu{display:block;position:sticky;top:0;z-index:10;background:var(--bg2);border-bottom:1px solid var(--line);padding:.6rem 1rem;padding-top:calc(.6rem + env(safe-area-inset-top,0px))}
+ .menu button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:4px;padding:.3rem .7rem;font:inherit;font-size:.9rem;cursor:pointer}
+ main{padding:1.6rem 1.1rem 3rem} h1{font-size:1.9rem} h2{font-size:1.45rem}
+ td:first-child,th:first-child{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<div class="menu"><button id="mb" aria-expanded="false">☰ Contents</button></div>
+<div class="shell">
+<aside id="side"><a class="brand" href="#top">Research Notes</a><p class="sub">AI Art Panic</p><h4>On this page</h4><ul><li class="l2"><a href="#the-tools">The Tools</a></li><li class="l2"><a href="#where-the-ai-models-struggle">Where the AI models struggle</a></li><li class="l2"><a href="#is-it-not-just-generation">Is It not just Generation?</a></li><li class="l2"><a href="#the-court-case-andersen-v-stability-ai">The Court Case: Andersen v. Stability AI</a></li><li class="l2"><a href="#custom-art-vs-generative-art">Custom Art vs. Generative Art</a></li><li class="l2"><a href="#is-generative-art-the-new-digital-art">Is Generative Art the new Digital Art?</a></li><li class="l2"><a href="#copyright-fair-use-watermarks-and-traini">Copyright &amp; Fair Use: Watermarks and Training on Watermarked Images</a></li><li class="l2"><a href="#conclusion">Conclusion</a></li><li class="l3"><a href="#what-the-tools-are-capable-of">What the Tools are capable of:</a></li><li class="l3"><a href="#1-text-to-image-txt2img">1. Text-to-image(txt2img)</a></li><li class="l3"><a href="#2-video-generation">2. Video Generation:</a></li><li class="l3"><a href="#what-used-to-go-wrong-and-mostly-doesn-t">What used to go wrong (and mostly doesn’t anymore)</a></li><li class="l3"><a href="#what-still-goes-wrong">What still goes wrong</a></li><li class="l3"><a href="#the-plaintiffs">The plaintiffs</a></li><li class="l3"><a href="#the-defendants">The defendants</a></li><li class="l3"><a href="#what-each-one-gives-you">What each one gives you</a></li><li class="l3"><a href="#where-the-two-collide">Where the two collide</a></li><li class="l3"><a href="#the-case-that-history-is-repeating">The case that history is repeating</a></li><li class="l3"><a href="#where-the-comparison-breaks-down">Where the comparison breaks down</a></li><li class="l3"><a href="#a-fair-middle-position">A fair middle position</a></li><li class="l3"><a href="#why-watermarked-images-ended-up-in-train">Why watermarked images ended up in training data</a></li><li class="l3"><a href="#how-watermarks-cut-in-the-fair-use-debat">How watermarks cut in the fair use debate</a></li></ul></aside>
+<main id="top"><article>
+<h1>AI Art Panic (2026)</h1>
+
+<p class="tags"><a href="#">Technical</a>, <a href="#">Art</a></p>
+<p>If you were on the internet at all in the late 2022, you’ve probably seen AI generated art and discussion of the impact of the tools and experienced AI gain popularity to where it is today. You’ve also probably seen a lot of hate for AI generated art in these years. There’s a lot of drama going on, as art focused communities across the internet decide how to handle this.AI-generated art stopped being a novelty a while ago. What’s left are the harder questions: who owns the output, whether training on artists’ work was lawful, how platforms should label it, and what it’s doing to people who make art for a living. The public backlash began with the episodes like the <a href="https://arstechnica.com/information-technology/2022/11/deviantart-upsets-artists-with-its-new-ai-art-generator-dreamup/">DeviantArt DreamUp controversy</a>, but the dispute has since moved from comment sections into courtrooms.</p>
+<h2 id="the-tools">The Tools<a class="anchor" href="#the-tools" aria-label="Link to this section">#</a></h2>
+<p>The old advice, “just look for the weird hands,” is dead. Image generators are now good enough that most people can’t reliably tell the difference, and they improve every few months.</p>
+<p>It’s been four years since AI art went mainstream, and the tools haven’t slowed down. What used to be easy to spot now often isn’t, and the gap between “AI slop” and “good enough to hire” keeps shrinking. That’s great news if you couldn’t draw before and a real problem if drawing is how, you pay rent, which is why the argument never really ended.</p>
+<h3 id="what-the-tools-are-capable-of">What the Tools are capable of: -<a class="anchor" href="#what-the-tools-are-capable-of" aria-label="Link to this section">#</a></h3>
+<h3 id="1-text-to-image-txt2img">1. Text-to-image(txt2img):<a class="anchor" href="#1-text-to-image-txt2img" aria-label="Link to this section">#</a></h3>
+<p>This is the headline feature: type what you want, get a picture back. In 2022 that often meant dozens or hundreds of attempts and a lot of trial-and-error with odd keywords. Now the best tools understand ordinary sentences, so you can say “a rainy street at night, neon signs in English, a cat in the foreground” and get something close on the first or second try.</p>
+<p>Editing has changed the most. Instead of rerolling from scratch, you can usually ask for a change in plain language (“make it daytime,” “remove the car,” “same character, different pose”) and the tool adjusts the image. Text inside images, long a giveaway, is far more reliable than it used to be.</p>
+<p>It’s still not push-button. Getting a specific vision, with the right composition, mood, and details, takes iteration, and prompting is a learnable skill. Open-weight models like Stable Diffusion and FLUX, run locally or through community tools, give the most control, including negative prompts for listing things you don’t want in the image. Many of the chat-style tools have dropped that feature in favor of simply telling the model what to avoid.</p>
+<p>txt2img is also what worries many artists most, because it’s the feature that most directly competes with commissioned work.</p>
+<figure><img src="img/image1.jpeg" alt="" loading="lazy"><figcaption>“a rainy street at night, neon signs in English, a cat in the foreground”</figcaption></figure>
+<h3 id="2-video-generation">2. Video Generation: -<a class="anchor" href="#2-video-generation" aria-label="Link to this section">#</a></h3>
+<p>In 2022, “AI video” mostly meant a few seconds of melting, flickering mush. Today you can type a sentence, or upload a single image, and get back a short clip with believable motion, camera moves, and often matching sound and dialogue.There are two main modes. Text-to-video works like text-to-image: describe a scene and the model invents it. Image-to-video starts from a picture (a photo, an illustration, or an AI image) and animates it, which gives you much more control over how the first frame looks. Many tools now also accept reference images, audio, or existing footage, and can edit a clip you already have (“same shot, but at night”).</p>
+<p>Two things changed the most. First, sound: leading models can generate dialogue, ambient noise, and music along with the picture, instead of leaving you to add it afterward. Second, consistency: keeping the same character across several shots, which used to be the giveaway, is now workable.</p>
+<p>The limits are still real. Clips are short, usually somewhere between 8 and 15 seconds. A full scene or film means stitching many generations together, and you’ll often discard a lot of them before one works. Long-term continuity, precise acting, and exact physical details still break easily.Video also raises the stakes of the other debates. A realistic clip of a real person saying something they never said is a different problem from a stylized picture, and studios have different worries about generated footage than illustrators do about generated art.</p>
+<h2 id="where-the-ai-models-struggle">Where the AI models struggle<a class="anchor" href="#where-the-ai-models-struggle" aria-label="Link to this section">#</a></h2>
+<p>In 2022, you could spot AI art from across the room. Today the tells are subtler, but they haven’t disappeared.</p>
+<h3 id="what-used-to-go-wrong-and-mostly-doesn-t">What used to go wrong (and mostly doesn’t anymore)<a class="anchor" href="#what-used-to-go-wrong-and-mostly-doesn-t" aria-label="Link to this section">#</a></h3>
+<blockquote>
+<p><strong><u>1.Hands and fingers.</u></strong></p>
+<p>Extra digits, fused knuckles and fingers growing out of sleeves were the signature flaw. Researchers explained it as a training-data problem: hands are small, often partly hidden or holding something, and look very different from pose to pose. Top models now get ordinary hands right most of the time.</p>
+<p><strong><u>2.Body horror in general.</u></strong> Melted faces, duplicated limbs and nonsense anatomy became far rarer as models improved, especially for single, well-framed subjects.</p>
+<figure><img src="img/image2.png" alt="" loading="lazy"><figcaption>((Portrait)) of a ((single)) Anime waifu with long Iridescent hair and sharp facial features singing into a studio microphone and wearing studio headphones, in a recording booth</figcaption></figure>
+<p><strong><u>3.Gibberish text.</u></strong> Early models treated letters as shapes, so signs and book covers came out as scribbles. Current leaders handle posters, UI mockups and infographics far better.</p>
+<figure><img src="img/image3.png" alt="" loading="lazy"><figcaption>A coffee cup that says "World’s best dad!"</figcaption></figure>
+</blockquote>
+<p><strong><u>4.Counting.</u></strong></p>
+<p>“Five soda cans” reliably gave you four or seven, because the model learned from many images with many quantities and never grasped the abstract number. Small counts (two to four objects) are much more dependable now, though I couldn’t find a reliable 2026 source measuring exactly how much.</p>
+<figure><img src="img/image4.png" alt="" loading="lazy"><figcaption><strong>portrait of an otter with 3 eyes</strong></figcaption></figure>
+<p><strong>What still goes wrong</strong></p>
+<blockquote>
+<p><strong><u>1.Long or small text.</u></strong> Reviews in 2026 still describe text accuracy as inconsistent across most models: long sentences, small print and stylized typography can still produce errors. I overstated this in my earlier summary when I called text “largely solved.” A better description is “solved for short, prominent text on the best models.”</p>
+<figure><img src="img/image5.png" alt="" loading="lazy"></figure>
+<p><strong><u>2.Hands in complicated situations</u>.</strong> Intricate finger positions, two people’s hands interacting, and small held objects still produce occasional artifacts, even though simple hands are mostly fixed.</p>
+<figure><img src="img/image6.png" alt="" loading="lazy"></figure>
+<p><strong><u>3.The “AI look.”</u></strong> Even when nothing is technically wrong, outputs can look smooth, over-polished and samey. That’s an aesthetic complaint, not a bug, but many people use it to spot AI work.</p>
+<figure><img src="img/image7.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h2 id="is-it-not-just-generation">Is It not just Generation?<a class="anchor" href="#is-it-not-just-generation" aria-label="Link to this section">#</a></h2>
+<p>Correct, and this is the part most people miss. If you only picture “type a sentence, get a picture,” it’s easy to see why artists feel threatened. But generation is only one tool in a growing kit, and many of the others work on art that already exists.</p>
+<p><strong>Image-to-image.</strong> Feed in a sketch, a photo or a finished piece and ask for variations, a different style, a different lighting setup or a cleaned-up version. The original acts as the blueprint, and you control how closely the result follows it.</p>
+<p><strong>Inpainting and outpainting.</strong> Paint over one region and regenerate just that part (fix a hand, swap a prop, change an outfit), or extend the canvas past its edges.</p>
+<p><strong>Plain-language editing.</strong> Newer tools let you say “make it night” or “remove the car” and change one thing while leaving the rest alone.</p>
+<p><strong>Control inputs.</strong> Pose skeletons, depth maps, line art and reference images can pin down composition, so the model fills in rendering rather than inventing the layout.</p>
+<p><strong>Cleanup tools.</strong> Upscaling, background removal, colorizing, noise removal and turning rough sketches into tidier line work are all common now, and many artists use them without thinking of them as “AI art.”</p>
+<p><strong>Animation.</strong> Image-to-video turns a still into a short moving clip, which is why a single illustration can now become a looping animation.</p>
+<p>Put together, a lot of finished work isn’t purely human or purely machine-made. A painter might sketch by hand, block in color digitally, use a model to try lighting options, repaint by hand over the result, and run a final upscale. Where does “AI art” start in that chain? Reasonable people draw the line in different places.</p>
+<h2 id="the-court-case-andersen-v-stability-ai">The Court Case: Andersen v. Stability AI<a class="anchor" href="#the-court-case-andersen-v-stability-ai" aria-label="Link to this section">#</a></h2>
+<p><em>Andersen v. Stability AI</em> is the best-known lawsuit brought by visual artists over AI image generators. It is filed in the U.S. District Court for the Northern District of California (San Francisco Division) as Case No. 3:23-cv-00201-WHO, before Judge William Orrick, and was first filed on January 13, 2023 by three illustrators: Sarah Andersen, Kelly McKernan and Karla Ortiz.</p>
+<p>By the <strong>Second Amended Complaint</strong> (filed October 31, 2024, Doc. 238), the case had grown from three artists to <strong>ten</strong>, and from three defendants to <strong>five</strong>. It asserts twelve counts under three laws:</p>
+<ul>
+<li><p>the <strong>Copyright Act</strong> (direct infringement and inducement),</p></li>
+<li><p>the <strong>Digital Millennium Copyright Act</strong>, §1202 (removing or altering copyright-management information), and</p></li>
+<li><p>the <strong>Lanham Act</strong> (false endorsement and trade dress), against Midjourney only.</p></li>
+</ul>
+<h3 id="the-plaintiffs">The plaintiffs<a class="anchor" href="#the-plaintiffs" aria-label="Link to this section">#</a></h3>
+<ul>
+<li><p>The ten named artists are illustrators, comic artists and fantasy and concept artists. According to the Second Amended Complaint:</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Plaintiff</strong></th>
+<th><strong>Lives in</strong></th>
+<th><strong>Notes from the complaint</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sarah Andersen</td>
+<td>Oregon</td>
+<td>Original plaintiff; copyright registrations for her works are listed in Exhibit C</td>
+</tr>
+<tr class="even">
+<td>Kelly McKernan</td>
+<td>Tennessee</td>
+<td>Original plaintiff; a DeviantArt member</td>
+</tr>
+<tr class="odd">
+<td>Karla Ortiz</td>
+<td>California</td>
+<td>Original plaintiff; registered copyrights <em>after</em> the first complaint was filed, so she does <strong>not</strong> assert copyright claims against Stability, Midjourney or DeviantArt, but is a plaintiff individually on the Runway count</td>
+</tr>
+<tr class="even">
+<td>H. Southworth (Hawke)</td>
+<td>Oregon</td>
+<td>A DeviantArt member</td>
+</tr>
+<tr class="odd">
+<td>Grzegorz Rutkowski</td>
+<td>Poland</td>
+<td>A DeviantArt member</td>
+</tr>
+<tr class="even">
+<td>Gregory Manchess</td>
+<td>Kentucky</td>
+<td>Registrations listed in Exhibit C</td>
+</tr>
+<tr class="odd">
+<td>Gerald Brom</td>
+<td>Georgia</td>
+<td>Registrations listed in Exhibit C</td>
+</tr>
+<tr class="even">
+<td>Jingna Zhang</td>
+<td>Washington State</td>
+<td>A DeviantArt member; images found in both LAION datasets</td>
+</tr>
+<tr class="odd">
+<td>Julia Kaye</td>
+<td>California</td>
+<td>Registrations listed in Exhibit C</td>
+</tr>
+<tr class="even">
+<td>Adam Ellis</td>
+<td>New York</td>
+<td>Registrations listed in Exhibit C</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How they say their work was used.</strong> The artists found their images in the LAION datasets by searching their own names on public tools (Have I Been Trained and the CLIP retrieval site). They present those images as a sample, not a full list.</p>
+<h3 id="the-defendants">The defendants<a class="anchor" href="#the-defendants" aria-label="Link to this section">#</a></h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 45%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Defendant</strong></th>
+<th><strong>What the complaint says it is</strong></th>
+<th><strong>Main claims against it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Stability AI Ltd. and Stability AI, Inc.</strong></td>
+<td>A UK company founded in 2020 (the Delaware parent, Stability AI, Inc., owns Stability AI Ltd.). Co-developer of Stable Diffusion, the model behind several of the other defendants' products</td>
+<td>Direct infringement by training (Stable Diffusion 2.0 and XL 1.0); inducement by distributing them free; DMCA</td>
+</tr>
+<tr class="even">
+<td><strong>Midjourney, Inc.</strong></td>
+<td>San Francisco company founded in 2021; sells subscription access to its image product</td>
+<td>Direct infringement for training its own models (versions 1 and 5.2); DMCA; Lanham Act false endorsement and trade dress</td>
+</tr>
+<tr class="odd">
+<td><strong>Runway AI, Inc.</strong></td>
+<td>New York company founded in 2018; the complaint says it collaborated with Stability on Stable Diffusion</td>
+<td>Direct infringement by training (Stable Diffusion 1.5); inducement; DMCA</td>
+</tr>
+<tr class="even">
+<td><strong>DeviantArt, Inc.</strong></td>
+<td>An online art community founded in 2000 and acquired by Wix.com in 2017. Released its paid AI tool, DreamUp, on November 9, 2022</td>
+<td>Direct infringement by copying a Stable Diffusion-based model into DreamUp</td>
+</tr>
+</tbody>
+</table>
+<p>Two details stand out:</p>
+<ul>
+<li><p><strong>Stability's role is central.</strong> The complaint treats Stable Diffusion as the model other defendants copied or built on, which is why the Runway and DeviantArt counts refer back to versions of it.</p></li>
+<li><p><strong>DeviantArt is a platform as well as a product.</strong> The complaint points out that several plaintiffs are DeviantArt members and that many training images were scraped from artist portfolios on sites like it.</p></li>
+</ul>
+<h2 id="custom-art-vs-generative-art">Custom Art vs. Generative Art<a class="anchor" href="#custom-art-vs-generative-art" aria-label="Link to this section">#</a></h2>
+<p>“Custom art” here means work a person makes for a specific client or purpose, like a commissioned portrait, a logo, a book cover or a character design. “Generative art” means images produced by a model from a prompt, a reference image or an edit request. The two overlap more than the argument suggests, but they work differently, and clients, artists and platforms treat them differently.</p>
+<h3 id="what-each-one-gives-you">What each one gives you<a class="anchor" href="#what-each-one-gives-you" aria-label="Link to this section">#</a></h3>
+<p>Custom art takes days to weeks and is priced by the artist’s time and skill. You get a back-and-forth with someone who understands your intent, and one artist can hold a character or style steady for years. There is a named creator who can explain and revise their choices, and the rights generally belong to the artist, assigned or licensed to you under your contract.</p>
+<h3 id="where-the-two-collide">Where the two collide<a class="anchor" href="#where-the-two-collide" aria-label="Link to this section">#</a></h3>
+<p>The first collision is the market. Surveys of illustrators, photographers and Japanese freelancers report that some artists have lost work, been pushed toward lower prices, or been asked to work faster. Those figures are self-reported, but they point in the same direction, and cheap-and-good-enough tends to hit low-end commissions first.</p>
+<p>The second is the training question. Whether these models were lawfully trained on artists’ work is the subject of the Andersen v. Stability AI case, and it is still undecided. Many artists see generative tools as built from their own labor, while the developers argue that training is a transformative use.</p>
+<p>The third is ownership. The Supreme Court declined to hear Thaler v. Perlmutter in March 2026, so U.S. law still requires a human author. A pure AI output may have little or no copyright protection, which is a real problem for a client who wants exclusive ownership of a logo or character.</p>
+<p>The fourth is disclosure. Some clients want to know how a piece was made, and some platforms and laws, including the EU’s AI transparency rules, are moving toward labeling.</p>
+<h2 id="is-generative-art-the-new-digital-art">Is Generative Art the new Digital Art?<a class="anchor" href="#is-generative-art-the-new-digital-art" aria-label="Link to this section">#</a></h2>
+<h3 id="the-case-that-history-is-repeating">The case that history is repeating<a class="anchor" href="#the-case-that-history-is-repeating" aria-label="Link to this section">#</a></h3>
+<p>When digital painting tools and programs like Photoshop spread in the 1990s and 2000s, many traditional artists dismissed the results. The complaints sound familiar: it isn’t real skill, the software does the work, the undo button removes the stakes, and anyone can do it now. Photography went through the same argument a century and a half earlier, and so did mechanical reproduction in general. The research paper you uploaded makes this point through Chris Barker, who argues that reactions to new reproduction technologies tend to recur in cycles rather than mark a single break, and it uses Duchamp’s Fountain as another example of a work first dismissed as not real art. On this view, generative art is the newest thing to go through the “that doesn’t count” phase, and digital art is the proof that these phases pass.</p>
+<h3 id="where-the-comparison-breaks-down">Where the comparison breaks down<a class="anchor" href="#where-the-comparison-breaks-down" aria-label="Link to this section">#</a></h3>
+<p>The strongest objection is that digital tools never needed other artists’ work in order to function. A graphics tablet and a paint program don’t contain a compressed record of millions of other people’s images. Generative models are trained on huge collections of existing art, and whether that was lawful is exactly what the Andersen case is arguing. Artists who accept digital art can still object to generative art on consent and compensation grounds, and those grounds have no equivalent in the earlier debate.</p>
+<p>A second difference is how much of the result comes from the person. In digital painting, every mark is still made by the artist, so the legal and artistic question of authorship is easy. With generation, the human may contribute only a prompt, which is why U.S. law currently says an image with no human authorship can’t be copyrighted, and why the Supreme Court declined to revisit that in March 2026.</p>
+<p>A third is scale and substitution. Digital tools made existing artists faster and opened art to more people, but they still required skill and time. Surveys of illustrators and photographers reported in your post suggest generative tools are already replacing paid work in some markets, which is a different kind of pressure.</p>
+<h3 id="a-fair-middle-position">A fair middle position<a class="anchor" href="#a-fair-middle-position" aria-label="Link to this section">#</a></h3>
+<p>Both things can be true. The “it isn’t real art” reaction really does resemble earlier technology panics, and many generative workflows, such as inpainting, upscaling and painting over a generated base, look a lot like digital art’s own history. But the lawsuits, the ownership rules and the economic effects are new questions that the digital art comparison doesn’t answer. So generative art may well become as normal as digital art, but it will likely get there only after the training and compensation questions are settled.</p>
+<p>One line you could end on: digital art won its place by changing how artists work, and generative art still has to show it can do that without taking from the people it learned from.</p>
+<h2 id="copyright-fair-use-watermarks-and-traini">Copyright &amp; Fair Use: Watermarks and Training on Watermarked Images<a class="anchor" href="#copyright-fair-use-watermarks-and-traini" aria-label="Link to this section">#</a></h2>
+<p>Watermarks matter in the AI art fight because they sit where three different legal questions meet. A visible watermark tells everyone that an image is owned or licensed, it can count as “copyright management information” under U.S. law, and it can function as a trademark. When image datasets were scraped from the internet, plenty of watermarked images went in with everything else, so the question becomes what the law says about training on them, removing the marks, and generating new images that carry a copy of the mark.</p>
+<h3 id="why-watermarked-images-ended-up-in-train">Why watermarked images ended up in training data<a class="anchor" href="#why-watermarked-images-ended-up-in-train" aria-label="Link to this section">#</a></h3>
+<p>Large datasets like LAION were built by collecting links to billions of images and captions from the web, with no step that checked whether each image was licensed. The artists’ complaint in Andersen v. Stability AI says the LAION-5B dataset includes watermark detection scores, and argues that this plus the fact that copyright information is everywhere in art means Stability knew the dataset contained copyrighted works. Those are the artists’ allegations, not findings, but they show why watermarks became part of the legal argument: a watermark is evidence that a developer was on notice.</p>
+<h3 id="how-watermarks-cut-in-the-fair-use-debat">How watermarks cut in the fair use debate<a class="anchor" href="#how-watermarks-cut-in-the-fair-use-debat" aria-label="Link to this section">#</a></h3>
+<p>For the artists and agencies: a watermark shows an image was marked as owned or licensed, so the developer knew. Agencies like Getty sell image licenses, so a model that substitutes for those licenses is a straightforward market-harm argument. And a model that can reproduce the watermark is, on this view, evidence that it learned from and retained something from the original.</p>
+<p>For the developers: training is a statistical process that learns patterns, not a stored library of images, and the UK court found the model was not a copy. A watermark showing up in an output is an unwanted artifact, not a feature, and filtering can reduce it. Developers also argue that seeing a watermark doesn’t prove a specific work was reproduced.</p>
+<p>Neither side’s argument has been tested against evidence in a U.S. image-generator fair use ruling yet.</p>
+<figure><img src="img/image8.png" alt="" loading="lazy"><figcaption>copyleft open source symbol gnu linux free software piracy theft crow bird talon logo minimal</figcaption></figure>
+<h2 id="conclusion">Conclusion<a class="anchor" href="#conclusion" aria-label="Link to this section">#</a></h2>
+<p>Four years after AI image generators went mainstream, the panic has changed shape more than it has faded. The tools now handle short text, edits, consistent characters and even video with sound far better than in 2022, though they still stumble on long or small text, complicated hands, exact counts, reflections and physics. They are also more than a “type a prompt, get a picture” machine: image-to-image, inpainting, upscaling and video mean a lot of finished work is a mix of human and AI effort. Reactions that digital art and photography once faced suggest the “that isn’t real art” phase will pass, but the comparison only goes so far, because generative models were built from other people’s artwork in a way that earlier tools never were.</p>
+<p>The law has so far answered smaller questions than the internet expected. In the U.S., copyright still requires a human author, and no court has issued a final fair use ruling on training an image generator. Andersen v. Stability AI has survived early rounds on its core training claim, while its DMCA claims were dropped and its more novel theories have drawn skepticism, and Getty won only a narrow trademark finding over watermarks in the UK. Meanwhile, surveys of artists report lost work and lower pay, and research on public opinion points to an audience that enjoys how AI images look but grows uneasy about authenticity, ownership and money. Both sides are right about something: these tools open art to more people, and they were built on creators’ work without consent or payment. What will settle the debate is not whether AI art is “real,” but whether training counts as fair use, how much human input counts as authorship, whether labeling rules spread, and whether creators get credit or compensation. Until then, the sensible approach is to disclose how work was made when it matters and to spell out ownership and AI-use terms in writing.</p>
+
+</article>
+<footer>Content adapted from the research document “AI Art Panic”. Layout inspired by OpGuides.</footer>
+</main></div>
+<script>
+(function(){
+ var s=document.getElementById('side'),mb=document.getElementById('mb');
+ mb.addEventListener('click',function(){var o=s.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+ s.addEventListener('click',function(e){if(e.target.tagName==='A')s.classList.remove('open')});
+ // wrap tables for horizontal scroll
+ document.querySelectorAll('table').forEach(function(t){var w=document.createElement('div');w.className='tw';t.parentNode.insertBefore(w,t);w.appendChild(t)});
+ // highlight current section
+ var links={};document.querySelectorAll('aside a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+ var hs=[].slice.call(document.querySelectorAll('h2[id],h3[id]'));
+ function spy(){var cur=null;hs.forEach(function(h){if(h.getBoundingClientRect().top<120)cur=h.id});
+  Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===cur)})}
+ window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script></body></html>
