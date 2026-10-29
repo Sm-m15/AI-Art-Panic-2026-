@@ -3,7 +3,7 @@
 ## Understanding Generative AI, Digital Art, and Copyright
 Project Link
 
-Website:https://sinister-superstition-x5jw6rwpjrwgh64j6-8000.app.github.dev/
+Website:https://sm-m15.github.io/AI-Art-Panic-2026-/?utm_source=chatgpt.com
 ## Introduction
 
 Artificial Intelligence has transformed the way images, videos, and other digital content are created. Generative AI models can produce visual content from text prompts by learning patterns from large datasets. While these technologies offer new creative opportunities, they also raise concerns about artistic originality, technical reliability, copyright ownership, and the use of existing artwork for training.
